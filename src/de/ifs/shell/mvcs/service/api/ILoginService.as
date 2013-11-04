@@ -7,7 +7,7 @@ package de.ifs.shell.mvcs.service.api
 	 */
 	public interface ILoginService extends IRemoteService
 	{
-		function login(value:Object):Boolean;
+		function login(value:Object):void;
 	}
 	
 }

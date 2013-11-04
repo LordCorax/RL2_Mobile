@@ -29,7 +29,7 @@ package de.ifs.shell.mvcs.service.impl
 		
 		/* INTERFACE de.ifs.shell.mvcs.service.api.ILoginService */
 		
-		public function login(value:Object):Boolean 
+		public function login(value:Object):void 
 		{
 			_service.login(value);
 		}
