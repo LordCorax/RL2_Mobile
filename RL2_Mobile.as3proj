@@ -44,7 +44,7 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="-source-path+=locale/{locale}" />
+    <option additional="-source-path+=locale/{locale} -services=services-config.xml" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
