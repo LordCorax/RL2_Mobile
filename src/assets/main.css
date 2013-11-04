@@ -1,0 +1,9 @@
+ @namespace s "library://ns.adobe.com/flex/spark";
+
+s|ActionBar
+{
+	color: #0F3177;
+	chromeColor: #191970;
+	fontSize: 40;
+	fontFamily: "Comic Sans MS";
+}
