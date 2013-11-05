@@ -19,6 +19,9 @@
 		<s:FormItem label="@Resource(key='pw', bundle='LoginView')">
 			<s:TextInput displayAsPassword="true" />
 		</s:FormItem>
+		<s:FormItem>
+			<s:Button label="@Resource(key='submit', bundle='LoginView')" width="100%" />
+		</s:FormItem>
 	</s:Form>
 	
 </s:View> 

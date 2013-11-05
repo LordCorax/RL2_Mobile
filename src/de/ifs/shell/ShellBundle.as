@@ -32,7 +32,7 @@ package de.ifs.shell
 		
 		public function extend(context:IContext):void 
 		{
-			context.logLevel = logLevel;			
+			context.logLevel = LogLevel.DEBUG;			
 			context.install(
 				TraceLoggingExtension,
 				VigilanceExtension,
@@ -52,12 +52,7 @@ package de.ifs.shell
 				SignalCommandMapExtension //SignalCommandMapExtension added to bundle.
 				);
 			context.configure(ContextViewListenerConfig);
-		}
-
-		public function get logLevel():uint
-		{
-			return LogLevel.INFO;
-		}		
+		}	
 		
 	}
 

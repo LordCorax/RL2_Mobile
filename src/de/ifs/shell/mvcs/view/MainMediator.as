@@ -14,8 +14,6 @@ package de.ifs.shell.mvcs.view
 		[Inject]
 		public var view:Main;
 		
-		private var timer:Timer;
-		
 		override public function initialize():void 
 		{
 			super.initialize();
