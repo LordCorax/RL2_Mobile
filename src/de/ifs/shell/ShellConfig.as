@@ -1,5 +1,9 @@
 package de.ifs.shell 
 {
+	import de.ifs.shell.mvcs.controller.ShellInitCommand;
+	import de.ifs.shell.mvcs.service.api.ILoginService;
+	import de.ifs.shell.mvcs.service.impl.LoginService;
+	import de.ifs.shell.mvcs.signal.LoginSignal;
 	import de.ifs.shell.mvcs.view.MainMediator;
 	import de.ifs.shell.mvcs.view.ShellMediator;
 	import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
@@ -33,10 +37,16 @@ package de.ifs.shell
 		
 		public function configure():void
 		{
+		//	initService();
 			initModel();
 			initCommand();
-			initSignal();
+		//	initSignal();
 			initMediator();
+		}
+		private function initService():void
+		{
+			trace("Service");
+			injector.map(ILoginService).toSingleton(LoginService);
 		}
 		private function initModel():void
 		{
@@ -53,6 +63,7 @@ package de.ifs.shell
 		private function initCommand():void
 		{
 			trace("Command");
+			commandMap.map("initConfig").toCommand(ShellInitCommand);
 		}
 		private function initSignal():void
 		{

@@ -1,5 +1,7 @@
 package de.ifs.account 
 {
+	import de.ifs.account.mvcs.controller.AccountCommand;
+	import de.ifs.shell.mvcs.signal.LoginSignal;
 	import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 	import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 	import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
@@ -33,7 +35,7 @@ package de.ifs.account
 		}
 		private function initModel():void
 		{
-			
+			trace("Account Init Model");
 		}
 		private function initCommand():void
 		{
@@ -45,7 +47,7 @@ package de.ifs.account
 		}
 		private function initSignal():void
 		{
-			
+			signalMap.map(LoginSignal).toCommand(AccountCommand);
 		}
 		
 	}

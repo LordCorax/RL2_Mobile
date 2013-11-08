@@ -8,7 +8,16 @@
                xmlns:mx="library://ns.adobe.com/flex/halo" 
 			   title="@Resource(key='title', bundle='LoginView')">
  
-	
+	<fx:Script>
+		<![CDATA[
+import flash.events.Event;
+		
+		private function login():void
+		{
+			dispatchEvent(new Event("login"));
+		}
+		]]>
+	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
@@ -20,7 +29,7 @@
 			<s:TextInput displayAsPassword="true" />
 		</s:FormItem>
 		<s:FormItem>
-			<s:Button label="@Resource(key='submit', bundle='LoginView')" width="100%" />
+			<s:Button label="@Resource(key='submit', bundle='LoginView')" width="100%" click="login();" />
 		</s:FormItem>
 	</s:Form>
 	

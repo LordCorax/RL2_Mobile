@@ -1,5 +1,6 @@
 package de.ifs.shell.mvcs.service.impl 
 {
+	import de.ifs.shell.mvcs.signal.LoginSignal;
 	import flash.events.IEventDispatcher;
 	import mx.rpc.remoting.RemoteObject;
 	import de.ifs.shell.mvcs.service.api.ILoginService;
@@ -15,6 +16,8 @@ package de.ifs.shell.mvcs.service.impl
 		[Inject]
 		public var eventDispatcher:IEventDispatcher;
 		
+		[Inject]
+		public var signal:LoginSignal;
 		
 		private var _service:RemoteObject;
 		
@@ -31,12 +34,13 @@ package de.ifs.shell.mvcs.service.impl
 		
 		public function login(value:Object):void 
 		{
-			_service.login(value);
+		//	_service.login(value);
+			signal.dispatch("Das Kam von LoginService" );
 		}
 		
 		public function resultHandler(event:ResultEvent):void 
 		{
-			
+			signal.dispatch(event.message.toString());
 		}
 		
 		public function faultHandler(event:FaultEvent):void 
