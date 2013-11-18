@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+               xmlns:s="library://ns.adobe.com/flex/spark" 
+               xmlns:mx="library://ns.adobe.com/flex/halo">
+
+	<fx:Metadata>
+		[HostComponent("de.ifs.shell.mvcs.view.components.LoginView")]
+		
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+		import flash.filters.BitmapFilterQuality;
+		]]>
+	</fx:Script>
+
+
+    <s:states>
+        <s:State name="normal" />
+        <s:State name="disabled" />
+    </s:states>
+
+    <s:Group id="contentGroup" left="10" right="10" top="10" bottom="10"/>
+
+    <s:filters.disabled>
+        <s:BlurFilter />
+    </s:filters.disabled>
+	<s:filters.normal>
+		<s:DropShadowFilter distance="3" angle="90" color="0x000000" alpha="1" blurX="8" blurY="8"   />
+	</s:filters.normal>
+</s:Skin>

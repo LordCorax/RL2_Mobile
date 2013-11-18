@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:mx="library://ns.adobe.com/flex/halo">
+
+    <fx:Metadata>
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata>
+
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="down"/>
+        <s:State name="over"/>
+        <s:State name="disabled"/>
+    </s:states>
+<s:Rect x="3" y="3" radiusX="4" radiusY="4" width="{hostComponent.width-3}" minHeight="30">
+    <s:fill>
+        <s:SolidColor color="0x909090"/>
+    </s:fill>
+</s:Rect>
+
+<!-- This is for the control -->
+<s:Rect x="0" y="0" radiusX="4" radiusY="4" width="{hostComponent.width-3}" minHeight="30">
+    <s:fill>
+        <s:LinearGradient rotation="90">
+            <s:GradientEntry color="0x606060" ratio=".5"/>
+            <s:GradientEntry color="0x303030"/>
+        </s:LinearGradient>
+    </s:fill>
+</s:Rect>
+<s:Label color="0xFFFFF0" color.down="0xFF0000" text="{hostComponent.label}" x="{hostComponent.x}" y="{hostComponent.y}" width="{hostComponent.width}" 
+		 height="{hostComponent.height}" verticalAlign="middle" textAlign="center"/>
+
+
+</s:Skin> 

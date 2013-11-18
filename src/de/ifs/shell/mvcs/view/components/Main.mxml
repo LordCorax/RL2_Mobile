@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---
+	Main implements the ShellBundle and ShellConfig classes to initialize robotlegs2.
+-->
+<s:ViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+                            xmlns:s="library://ns.adobe.com/flex/spark"
+							xmlns:rl2="http://ns.robotlegs.org/flex/rl2"
+							xmlns:config="de.ifs.shell.*" 
+							xmlns:local="de.ifs.local.*"
+							xmlns:mvcs="robotlegs.bender.bundles.mvcs.*">
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<rl2:ContextBuilder id="contextBuilder">
+			<config:ShellBundle/>
+			<config:ShellConfig/>
+		</rl2:ContextBuilder>
+	</fx:Declarations> 
+	<fx:Style source="/assets/main.css"/>
+	<!-- new to AIR? please read *carefully* the readme.txt files! -->
+	
+</s:ViewNavigatorApplication>

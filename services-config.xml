@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<services-config>
+    <services>
+        <service id="amfphp-flashremoting-service" class="flex.messaging.services.RemotingService" messageTypes="flex.messaging.messages.RemotingMessage">
+            <destination id="amfphp">
+                <channels>
+					<channel ref="my-amf"/>
+                </channels>		
+                <properties>
+                    <source>*</source>
+                </properties>
+            </destination>
+        </service>
+    </services>
+    <channels>
+		<!-- Pfad zum Daten-Server. Die URL muss ggf. geändert werden. -->
+	<!-- please replace the uri with a path to your own server. thanks. -->
+        <channel-definition id="my-amf" class="mx.messaging.channels.AMFChannel">
+            <endpoint uri="https://ifs-srv6.ifs.med.uni-goettingen.de/Amfphp" class="flex.messaging.endpoints.AMFEndpoint"/>          
+        </channel-definition>
+    </channels>
+</services-config>
