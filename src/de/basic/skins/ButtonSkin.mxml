@@ -13,18 +13,18 @@
         <s:State name="over"/>
         <s:State name="disabled"/>
     </s:states>
-<s:Rect x="3" y="3" radiusX="4" radiusY="4" width="{hostComponent.width-3}" minHeight="30">
+<s:Rect x="3" y="3" radiusX="4" radiusY="4" width="{hostComponent.width-3}" minHeight="50">
     <s:fill>
         <s:SolidColor color="0x909090"/>
     </s:fill>
 </s:Rect>
 
 <!-- This is for the control -->
-<s:Rect x="0" y="0" radiusX="4" radiusY="4" width="{hostComponent.width-3}" minHeight="30">
+<s:Rect x="0" y="0" radiusX="4" radiusY="4" width="{hostComponent.width-3}" minHeight="50">
     <s:fill>
         <s:LinearGradient rotation="90">
-            <s:GradientEntry color="0x606060" ratio=".5"/>
-            <s:GradientEntry color="0x303030"/>
+            <s:GradientEntry color="0x0F3177" ratio=".5"/>
+            <s:GradientEntry color="0xa2d2ff"/>
         </s:LinearGradient>
     </s:fill>
 </s:Rect>

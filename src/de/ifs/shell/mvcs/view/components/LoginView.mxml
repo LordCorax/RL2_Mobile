@@ -6,6 +6,7 @@
 <s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
                xmlns:s="library://ns.adobe.com/flex/spark" 
                xmlns:mx="library://ns.adobe.com/flex/halo" 
+			   xmlns:basic="de.basic.controls.*"
 			   title="@Resource(key='title', bundle='LoginView')">
  
 	<fx:Script>
@@ -22,14 +23,16 @@ import flash.events.Event;
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
 	<s:Form>
-		<s:FormItem label="@Resource(key='username', bundle='LoginView')">
-			<s:TextInput/>
+		<s:FormHeading label="@Resource(key='username', bundle='LoginView')"/>
+		<s:FormItem>
+			<basic:BasicTextInput/>
 		</s:FormItem>
-		<s:FormItem label="@Resource(key='pw', bundle='LoginView')">
-			<s:TextInput displayAsPassword="true" />
+		<s:FormHeading label="@Resource(key='pw', bundle='LoginView')"/>
+		<s:FormItem>
+			<basic:BasicTextInput displayAsPassword="true" />
 		</s:FormItem>
 		<s:FormItem>
-			<s:Button label="@Resource(key='submit', bundle='LoginView')" width="100%" click="login();" />
+			<basic:BasicButton label="@Resource(key='submit', bundle='LoginView')" width="100%" click="login();" />
 		</s:FormItem>
 	</s:Form>
 	
