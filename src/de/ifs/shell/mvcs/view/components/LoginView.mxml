@@ -11,11 +11,13 @@
  
 	<fx:Script>
 		<![CDATA[
+import de.ifs.shell.mvcs.events.LoginEvent;
+import de.ifs.shell.mvcs.model.vo.LoginVO;
 import flash.events.Event;
 		
 		private function login():void
 		{
-			dispatchEvent(new Event("login"));
+			dispatchEvent(new LoginEvent(LoginEvent.LOGIN, new LoginVO(username.text, password.text)));
 		}
 		]]>
 	</fx:Script>
@@ -25,11 +27,11 @@ import flash.events.Event;
 	<s:Form>
 		<s:FormHeading label="@Resource(key='username', bundle='LoginView')"/>
 		<s:FormItem>
-			<basic:BasicTextInput/>
+			<basic:BasicTextInput id="username" />
 		</s:FormItem>
 		<s:FormHeading label="@Resource(key='pw', bundle='LoginView')"/>
 		<s:FormItem>
-			<basic:BasicTextInput displayAsPassword="true" />
+			<basic:BasicTextInput displayAsPassword="true" id="password" />
 		</s:FormItem>
 		<s:FormItem>
 			<basic:BasicButton label="@Resource(key='submit', bundle='LoginView')" width="100%" click="login();" />

@@ -14,6 +14,7 @@
 		<rl2:ContextBuilder id="contextBuilder">
 			<config:ShellBundle/>
 			<config:ShellConfig/>
+			<local:LocalConfig />
 		</rl2:ContextBuilder>
 	</fx:Declarations> 
 	<fx:Style source="/assets/main.css"/>

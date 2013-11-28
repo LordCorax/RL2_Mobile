@@ -1,5 +1,7 @@
 package de.ifs.local 
 {
+	import de.ifs.local.mvcs.controller.LocalLoginCommand;
+	import de.ifs.shell.mvcs.signal.LoginSignal;
 	import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 	import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 	import robotlegs.bender.framework.api.IConfig;
@@ -36,19 +38,21 @@ package de.ifs.local
 		}
 		private function initModel():void
 		{
-			trace("initModel");
+			trace("Local: initModel");
+			injector.map(LoginSignal).asSingleton();
 		}
 		private function initService():void
 		{
-			trace("initService");
+			trace("Local: initService");
 		}
 		private function initCommand():void
 		{
-			trace("initCommand");
+			trace("Local: initCommand");
 		}
 		private function initSignal():void
 		{
-			trace("initSignal");
+			trace("Local: initSignal");
+			signalMap.map(LoginSignal).toCommand(LocalLoginCommand);
 		}
 	}
 

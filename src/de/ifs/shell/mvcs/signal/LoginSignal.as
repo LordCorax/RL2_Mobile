@@ -11,8 +11,7 @@ package de.ifs.shell.mvcs.signal
 		
 		public function LoginSignal() 
 		{
-			super(String);
-			
+			super(Boolean);
 		}
 		
 	}

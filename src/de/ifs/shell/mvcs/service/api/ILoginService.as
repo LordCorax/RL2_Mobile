@@ -1,5 +1,6 @@
 package de.ifs.shell.mvcs.service.api 
 {
+	import de.ifs.shell.mvcs.model.vo.LoginVO;
 	
 	/**
 	 * ...
@@ -7,7 +8,7 @@ package de.ifs.shell.mvcs.service.api
 	 */
 	public interface ILoginService extends IRemoteService
 	{
-		function login(value:Object):void;
+		function login(value:LoginVO):void;
 	}
 	
 }

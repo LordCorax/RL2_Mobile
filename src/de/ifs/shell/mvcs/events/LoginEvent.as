@@ -1,5 +1,6 @@
 package de.ifs.shell.mvcs.events 
 {
+	import de.ifs.shell.mvcs.model.vo.LoginVO;
 	import flash.events.Event;
 	import de.ifs.shell.mvcs.view.components.Main;
 	/**
@@ -8,11 +9,13 @@ package de.ifs.shell.mvcs.events
 	 */
 	public class LoginEvent extends Event 
 	{
-		public var body:Main;
-		public function LoginEvent(type:String, value:Main) 
+		public static const LOGIN:String = "login"
+		
+		private var _body:LoginVO;
+		public function LoginEvent(type:String, value:LoginVO) 
 		{ 
 			super(type, bubbles, cancelable);
-			body = value;
+			_body = value;
 		} 
 		
 		public override function clone():Event 
@@ -24,7 +27,14 @@ package de.ifs.shell.mvcs.events
 		{ 
 			return formatToString("LoginEvent", "type", "bubbles", "cancelable", "eventPhase"); 
 		}
-		
+		public function get body():LoginVO
+		{
+			return _body;
+		}
+		public function set body(value:LoginVO):void
+		{
+			_body = value;
+		}
 	}
 	
 }

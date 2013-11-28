@@ -20,13 +20,9 @@ package de.ifs.shell.mvcs.view
 		override public function initialize():void 
 		{
 			super.initialize();
-			addViewListener("login", onLogin);
+			addViewListener(LoginEvent.LOGIN, dispatch);
 		}
-		private function onLogin(event:Event):void
-		{
-			trace(view.parent.toString());
-	
-		}
+ 
 	}
 
 }

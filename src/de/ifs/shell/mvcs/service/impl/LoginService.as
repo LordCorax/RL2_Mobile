@@ -1,5 +1,6 @@
 package de.ifs.shell.mvcs.service.impl 
 {
+	import de.ifs.shell.mvcs.model.vo.LoginVO;
 	import de.ifs.shell.mvcs.signal.LoginSignal;
 	import flash.events.IEventDispatcher;
 	import mx.rpc.remoting.RemoteObject;
@@ -18,7 +19,7 @@ package de.ifs.shell.mvcs.service.impl
 		
 		[Inject]
 		public var signal:LoginSignal;
-		
+				
 		private var _service:RemoteObject;
 		
 		public function LoginService() 
@@ -32,20 +33,32 @@ package de.ifs.shell.mvcs.service.impl
 		
 		/* INTERFACE de.ifs.shell.mvcs.service.api.ILoginService */
 		
-		public function login(value:Object):void 
+		public function login(value:LoginVO):void 
 		{
-		//	_service.login(value);
-			signal.dispatch("Das Kam von LoginService" );
+			_service.showBusyCursor = true;
+			_service.login(value);
+			trace(value.toString());
 		}
 		
 		public function resultHandler(event:ResultEvent):void 
 		{
-			signal.dispatch(event.message.toString());
+			_service.showBusyCursor = false;
+			switch (Boolean(event.result)) 
+			{
+				case true:
+					trace("Willkommen");
+					signal.dispatch(true);		
+				break;
+				default:
+					trace("Oops, da lief was schief");
+				break;
+			}			
 		}
 		
 		public function faultHandler(event:FaultEvent):void 
 		{
-			
+			_service.showBusyCursor = false;
+			trace("FAULT");
 		}
 		
 		public function get service():RemoteObject 
